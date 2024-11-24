@@ -1,6 +1,6 @@
 # atra
 
-A transcriber written in Python that uses Whisper.
+A transcriber written in Python that uses Whisper
 
 ## Previous configuration
 
