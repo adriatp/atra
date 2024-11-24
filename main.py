@@ -30,7 +30,7 @@ def infinite_rec(sample_rate=SAMPLE_RATE, channels=CHANNELS):
 
     def callback(indata, frames, time, status):
         audio_list.append(indata.copy())
-    
+
     with sd.InputStream(device=REC_DEVICE, samplerate=sample_rate, blocksize=2048, channels=channels, callback=callback):
         print("Recording...")
         try:
