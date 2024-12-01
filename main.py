@@ -34,7 +34,7 @@ def infinite_rec(sample_rate=SAMPLE_RATE, channels=CHANNELS):
     with sd.InputStream(device=REC_DEVICE, samplerate=sample_rate, blocksize=2048, channels=channels, callback=callback):
         print("Recording...")
         try:
-            while keys_pressed():
+            while not keys_pressed():
                 pass
             print("Done")
             return audio_list
@@ -51,6 +51,8 @@ def main():
     try:
         while True:
             if keys_pressed():
+                while keys_pressed():
+                    pass
                 temp_filename = tempfile.mktemp(suffix='.wav', dir='./output')
                 audio_list = infinite_rec()
                 audio_array = np.concatenate(audio_list)
